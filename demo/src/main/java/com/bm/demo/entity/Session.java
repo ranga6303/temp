@@ -15,56 +15,40 @@ public class Session {
     @Column(name = "session_code", nullable = false, unique = true)
     private String sessionCode;
 
+    @Column(name = "beacon_uuid", nullable = false)
+    private String beaconUuid;
+
     @Column(name = "start_time", nullable = false)
     private LocalDateTime startTime;
 
     @Column(name = "expiry_time", nullable = false)
     private LocalDateTime expiryTime;
 
-    // Many sessions belong to one teacher
-    @ManyToOne
-    @JoinColumn(name = "teacher_id", referencedColumnName = "tacher_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "teacher_id",
+                referencedColumnName = "tacher_id",
+                nullable = false)
     private Teacher teacher;
 
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL)
     private List<Attendance> attendances;
 
-    public Session() {
-    }
+    public Session() {}
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
-    public String getSessionCode() {
-        return sessionCode;
-    }
+    public String getSessionCode() { return sessionCode; }
+    public void setSessionCode(String sessionCode) { this.sessionCode = sessionCode; }
 
-    public void setSessionCode(String sessionCode) {
-        this.sessionCode = sessionCode;
-    }
+    public String getBeaconUuid() { return beaconUuid; }
+    public void setBeaconUuid(String beaconUuid) { this.beaconUuid = beaconUuid; }
 
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
+    public LocalDateTime getStartTime() { return startTime; }
+    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
 
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
+    public LocalDateTime getExpiryTime() { return expiryTime; }
+    public void setExpiryTime(LocalDateTime expiryTime) { this.expiryTime = expiryTime; }
 
-    public LocalDateTime getExpiryTime() {
-        return expiryTime;
-    }
-
-    public void setExpiryTime(LocalDateTime expiryTime) {
-        this.expiryTime = expiryTime;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
+    public Teacher getTeacher() { return teacher; }
+    public void setTeacher(Teacher teacher) { this.teacher = teacher; }
 }
