@@ -1,5 +1,7 @@
 package com.bm.demo.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -13,7 +15,11 @@ public class Student {
     @Column(name = "student_name", length = 45, nullable = false)
     private String studentName;
 
-    public Student() {}
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Attendance> attendances;
+
+    public Student() {
+    }
 
     public Student(String studentId, String studentName) {
         this.studentId = studentId;

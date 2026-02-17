@@ -1,7 +1,8 @@
 package com.bm.demo.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "session")
@@ -11,64 +12,59 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "sid", length = 16)
-    private String sid;
+    @Column(name = "session_code", nullable = false, unique = true)
+    private String sessionCode;
 
-    @Column(name = "creator_id", length = 10)
-    private String creatorId;
+    @Column(name = "start_time", nullable = false)
+    private LocalDateTime startTime;
 
-    @Column(name = "creator_name", length = 45)
-    private String creatorName;
+    @Column(name = "expiry_time", nullable = false)
+    private LocalDateTime expiryTime;
 
-    @Column(name = "expiry")
-    private LocalTime expiry;
+    // Many sessions belong to one teacher
+    @ManyToOne
+    @JoinColumn(name = "teacher_id", referencedColumnName = "tacher_id", nullable = false)
+    private Teacher teacher;
 
-    @Column(name = "uuid", length = 34)
-    private String uuid;
+    @OneToMany(mappedBy = "session", cascade = CascadeType.ALL)
+    private List<Attendance> attendances;
 
-    public Session() {}
+    public Session() {
+    }
 
     public Long getId() {
         return id;
     }
 
-    public String getSid() {
-        return sid;
+    public String getSessionCode() {
+        return sessionCode;
     }
 
-    public void setSid(String sid) {
-        this.sid = sid;
+    public void setSessionCode(String sessionCode) {
+        this.sessionCode = sessionCode;
     }
 
-    public String getCreatorId() {
-        return creatorId;
+    public LocalDateTime getStartTime() {
+        return startTime;
     }
 
-    public void setCreatorId(String creatorId) {
-        this.creatorId = creatorId;
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 
-    public String getCreatorName() {
-        return creatorName;
+    public LocalDateTime getExpiryTime() {
+        return expiryTime;
     }
 
-    public void setCreatorName(String creatorName) {
-        this.creatorName = creatorName;
+    public void setExpiryTime(LocalDateTime expiryTime) {
+        this.expiryTime = expiryTime;
     }
 
-    public LocalTime getExpiry() {
-        return expiry;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setExpiry(LocalTime expiry) {
-        this.expiry = expiry;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 }

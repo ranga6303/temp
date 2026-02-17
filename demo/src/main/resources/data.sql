@@ -1,0 +1,77 @@
+-- =============================
+-- TEACHER
+-- =============================
+
+INSERT INTO teacher (tacher_id, teacher_name)
+VALUES ('1234567890', 'dev');
+
+
+-- =============================
+-- STUDENTS
+-- =============================
+
+INSERT INTO student (student_id, student_name) VALUES
+('24F21A05J7', 'Vadde Pragathi'),
+('24F21A05J8', 'Jalla Prakash'),
+('24F21A05J9', 'Nallampalli Pravalika'),
+('24F21A05K0', 'Kolle Praveen Kumar'),
+('24F21A05K1', 'Sake Priyanka'),
+('24F21A05K2', 'Karra Pujitha'),
+('24F21A05K3', 'Kummetha Radhika'),
+('24F21A05K4', 'Ediga Raghavendra'),
+('24F21A05K5', 'Yenumula Raghuram'),
+('24F21A05K6', 'Nelakurthi Rahul'),
+('24F21A05K7', 'Peta Raj Kumar'),
+('24F21A05K8', 'Madiga Rajesh'),
+('24F21A05K9', 'Kancharla Rajesh'),
+('24F21A05L0', 'Kuruva Rajesh'),
+('24F21A05L1', 'Kakarla Rajeswari'),
+('24F21A05L2', 'Polika Rajitha'),
+('24F21A05L3', 'Mudigubba Rakshagna'),
+('24F21A05L4', 'Kondamallela Ramakrishna'),
+('24F21A05L6', 'Dommarandyal Ramija Bi'),
+('24F21A05L7', 'Dane Ramu'),
+('24F21A05L8', 'Balaganti Ranganayakulu'),
+('24F21A05L9', 'Madda Rangaswamy'),
+('24F21A05M0', 'Jangam Rangaswamy'),
+('24F21A05M1', 'Gowla Rani'),
+('24F21A05M2', 'Rayanki Rani'),
+('24F21A05M3', 'Pujari Ravi Teja'),
+('24F21A05M4', 'Dudekula Razak'),
+('24F21A05M5', 'Shaik Razia Begum'),
+('24F21A05M6', 'Shaik Reshma'),
+('24F21A05M7', 'Nataraju Rishi'),
+('24F21A05M8', 'Guduru Rishitha'),
+('24F21A05M9', 'Kurnool Riyaz'),
+('24F21A05N0', 'Bapuram Rohith'),
+('24F21A05N1', 'Sake Rupa'),
+('24F21A05N2', 'B Sahasra'),
+('24F21A05N3', 'Dasagol Sai Gowtham'),
+('24F21A05N4', 'Gangireddy Sai Hemanth Kumar Reddy'),
+('24F21A05N5', 'Gujjala Sai Karthik'),
+('24F21A05N6', 'Peddipalli Narayana Gari Sai Kruthika'),
+('24F21A05N7', 'V Sai Sri Charan'),
+('24F21A05N8', 'Jakkalacheruvu Saikumar'),
+('24F21A05N9', 'Kuruba Sailu'),
+('24F21A05O0', 'Thurpu Sainath Reddy'),
+('24F21A05O1', 'Kottapeta Sajitha'),
+('24F21A05O2', 'Shaik Sameera'),
+('24F21A05O3', 'Shaik Sana Aliya'),
+('24F21A05O4', 'Mulla Sana Zaveriya'),
+('24F21A05O5', 'Dasari Sandya'),
+('24F21A05O6', 'Gosala Sangamesh'),
+('24F21A05O7', 'Kambadur Sanjana'),
+('24F21A05O8', 'Hampanapatna Sanjana'),
+('24F21A05O9', 'Aasadi Sanjith Kumar'),
+('24F21A05P0', 'Nalabala Sathvik'),
+('24F21A05P1', 'Sheksab Shaheeda'),
+('24F21A05P3', 'Yellanuru Shaik Salma Tabassum'),
+('24F21A05P4', 'Pinjari Shaikshavali'),
+('24F21A05P5', 'Adigouni Shalini'),
+('24F21A05P6', 'Shaik Shameer'),
+('24F21A05P7', 'Shaik Shasha Vali'),
+('24F21A05P8', 'Madala Shashanth'),
+('24F21A05P9', 'Chukka Sneha'),
+('24F21A05Q0', 'Gulluru Snehalatha'),
+('24F21A05Q1', 'Budarpu Sowmya'),
+('24F21A05Q2', 'Bara Sravan Kumar');

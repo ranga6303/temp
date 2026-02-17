@@ -1,6 +1,7 @@
 package com.bm.demo.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "teacher")
@@ -12,6 +13,10 @@ public class Teacher {
 
     @Column(name = "teacher_name", length = 45, nullable = false)
     private String teacherName;
+
+    // One teacher can create many sessions
+    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
+    private List<Session> sessions;
 
     public Teacher() {}
 
@@ -34,5 +39,13 @@ public class Teacher {
 
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
+    }
+
+    public List<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(List<Session> sessions) {
+        this.sessions = sessions;
     }
 }
